@@ -1,0 +1,207 @@
+.. |_| unicode:: 0xA0
+
+
+=================================
+Plugin 'trovis557x' Konfiguration
+=================================
+
+
+.. index:: Plugins; trovis557x Konfiguration
+
+.. image:: /_static/img/interface.svg
+   :alt: plugin type logo
+   :width: 300px
+   :height: 300px
+   :scale: 50 %
+   :align: left
+
+.. |br| raw:: html
+
+   <br />
+
+Im folgenden sind etwaige Anforderungen und unterstützte Hardware beschrieben. Danach folgt die               Beschreibung, wie das Plugin **trovis557x** konfiguriert wird. Außerdem ist im folgenden               beschrieben, wie das Plugin in den Item Definitionen genutzt werden kann. [#f1]_ 
+
+Es handelt sich bei diesem Plugin um ein **interface Plugin**.
+
+
+
+Beschreibung
+============
+
+Plugin zum Auslesen von SAMSON TROVIS 557x Heizungsreglern
+
+
+Anforderungen
+=============
+
+
+
+
+ - Minimum SmartHomeNG Version: **1.5**
+
+Konfiguration
+=============
+
+
+Im folgenden ist beschrieben, wie das Plugin **trovis557x** konfiguriert wird. Außerdem ist im folgenden beschrieben, wie das Plugin in den Item Definitionen genutzt werden kann.
+
+
+=========
+Parameter
+=========
+
+
+Das Plugin verfügt über folgende Parameter, die in der Datei ``../etc/plugin.yaml`` konfiguriert werden:
+
+
+cycle
+=====
+
+
+Ausleseintervall
+
+ - Datentyp: **int**
+ - Standardwert: **60**
+
+
+modbus_debug
+============
+
+
+Debug-Meldungen von pymodbus
+
+ - Datentyp: **bool**
+ - Standardwert: **False**
+
+
+modbus_mode
+===========
+
+
+Wie die Modbus-Kommunikation duchgeführt wird (rtu oder tcp)
+
+ - Datentyp: **str**
+ - Standardwert: **rtu**
+
+
+modbus_port
+===========
+
+
+Modbus Verbindung, z.B. /dev/ttyUSB0 (rtu mit socat/mbusd) oder 192.168.178.52:502 (tcp)
+
+ - Datentyp: **str**
+ - Standardwert: **/dev/ttytrovis**
+
+
+modbus_speed
+============
+
+
+Modbus-Geschwindigkeit (Trovis: PA6 - Modbus, Baudrate)
+
+ - Datentyp: **int**
+ - Standardwert: **19200**
+
+
+modbus_timeout
+==============
+
+
+Modbus Timeout
+
+ - Datentyp: **num**
+ - Standardwert: **0.5**
+
+
+modbus_trovis_address
+=====================
+
+
+Stationsadresse der Trovis (Trovis: PA6 - Modbus, ST.-NR <=247!)
+
+ - Datentyp: **int**
+ - Standardwert: **247**
+
+
+==============
+Item Attribute
+==============
+
+
+Das Plugin unterstützt folgende Item Attribute, die in den Dateien im Verzeichnis  ``../items`` verwendet werden:
+
+
+desc
+====
+
+
+Beschreibung des Items
+
+ - Datentyp: **str**
+
+
+invalid_to_zero
+===============
+
+
+Setzt 32767 (=NaN, nicht verfügbar) auf 0 fuer ausgeschaltete oder nicht verfuegbare Register
+
+ - Datentyp: **bool**
+
+
+liste
+=====
+
+
+Enthält alle Item-Informationen (Buswert, umgerechneter Wert, Einheit oder Listentext)
+
+ - Datentyp: **list**
+
+
+trovis557x_var
+==============
+
+
+Kennzeichnet das Item zur Benutzung durch das Plugin (Kurznamen des gewünschten Wertes/Bits hier zuweisen)
+
+ - Datentyp: **str**
+
+
+type
+====
+
+
+Den Typ aller verwendeten Items vorerst auf list setzen (wird noch geändert)
+
+ - Datentyp: **str**
+
+
+werte
+=====
+
+
+Für Register, die stufenweise mit Werten belegt sind
+
+ - Datentyp: **list**
+
+
+===============
+Logik Parameter
+===============
+
+
+Das Plugin verfügt über folgende Parameter, die in der Datei ``../etc/logic.yaml`` konfiguriert werden:
+
+Keine Logik Parameter in den Metadaten beschrieben - **Bitte in der README nachsehen** (siehe Fußnote)
+
+================
+Plugin Functions
+================
+
+
+Das Plugin verfügt über folgende öffentliche Funktionen, die z.B. in Logiken aufgerufen werden können.
+
+**Keine**
+
+.. [#f1] Diese Seite wurde aus den Metadaten des Plugins erzeugt. Für den Fall, dass diese Seite nicht alle benötigten Informationen enthält, bitte auf die englischsprachige :doc:`README Datei <../../plugins/trovis557x/README>` des Plugins zugreifen.

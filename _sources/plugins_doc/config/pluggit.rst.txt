@@ -1,0 +1,141 @@
+.. |_| unicode:: 0xA0
+
+
+==============================
+Plugin 'pluggit' Konfiguration
+==============================
+
+
+.. index:: Plugins; pluggit Konfiguration
+
+.. image:: /plugins/pluggit/webif/static/img/plugin_logo.svg
+   :alt: plugin logo
+   :width: 300px
+   :height: 300px
+   :scale: 50 %
+   :align: left
+
+.. |br| raw:: html
+
+   <br />
+
+Im folgenden sind etwaige Anforderungen und unterstützte Hardware beschrieben. Danach folgt die               Beschreibung, wie das Plugin **pluggit** konfiguriert wird. Außerdem ist im folgenden               beschrieben, wie das Plugin in den Item Definitionen genutzt werden kann. [#f1]_ 
+
+Es handelt sich bei diesem Plugin um ein **interface Plugin**.
+
+
+
+Beschreibung
+============
+
+Anbindung einer KWL Pluggit AP310 über das Modbus-Protokoll.
+
+
+Anforderungen
+=============
+
+
+
+
+ - Minimum SmartHomeNG Version: **1.8**
+
+Konfiguration
+=============
+
+
+Im folgenden ist beschrieben, wie das Plugin **pluggit** konfiguriert wird. Außerdem ist im folgenden beschrieben, wie das Plugin in den Item Definitionen genutzt werden kann.
+
+
+=========
+Parameter
+=========
+
+
+Das Plugin verfügt über folgende Parameter, die in der Datei ``../etc/plugin.yaml`` konfiguriert werden:
+
+
+cycle
+=====
+
+
+Zykluszeit.
+
+ - Datentyp: **int**
+ - Standardwert: **50**
+
+
+host
+====
+
+
+Hostname oder IP Adresse des Pluggit Dienstes.
+
+ - Datentyp: **str**
+
+
+port
+====
+
+
+Port Nummer des Pluggit Dienstes.
+
+ - Datentyp: **int**
+ - Standardwert: **502**
+
+ - Minimalwert: **0**
+ - Maximalwert: **65535**
+
+==============
+Item Attribute
+==============
+
+
+Das Plugin unterstützt folgende Item Attribute, die in den Dateien im Verzeichnis  ``../items`` verwendet werden:
+
+
+pluggit_convert
+===============
+
+
+Wandelt den gelesenen oder den zu schreibenden Wert in bzw. von ein anderes Format um.
+
+ - Datentyp: **str**
+
+
+pluggit_read
+============
+
+
+Aus der Pluggit-Einheit zu lesende Daten.
+
+ - Datentyp: **str**
+
+
+pluggit_write
+=============
+
+
+In die Pluggit-Einheit zu schreibender Wert.
+
+ - Datentyp: **str**
+
+
+===============
+Logik Parameter
+===============
+
+
+Das Plugin verfügt über folgende Parameter, die in der Datei ``../etc/logic.yaml`` konfiguriert werden:
+
+Keine Logik Parameter in den Metadaten beschrieben - **Bitte in der README nachsehen** (siehe Fußnote)
+
+================
+Plugin Functions
+================
+
+
+Das Plugin verfügt über folgende öffentliche Funktionen, die z.B. in Logiken aufgerufen werden können.
+
+Keine Funktionen in den Metadaten beschrieben - **Bitte in der README nachsehen** (siehe Fußnote)
+
+.. [#f1] Diese Seite wurde aus den Metadaten des Plugins erzeugt. Für den Fall, dass diese Seite nicht alle benötigten Informationen enthält, bitte auf die englischsprachige :doc:`README Datei <../../plugins/pluggit/README>` des Plugins zugreifen.
